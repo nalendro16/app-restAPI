@@ -90,3 +90,17 @@ exports.hapusdatamahasiswa = function (req, res) {
     }
   )
 }
+
+// menampilkan mata kuliah group
+exports.tampilgroupmatakuliah = function (req, res) {
+  connection.query(
+    'SELECT mahasiswa.id, mahasiswa.nim, mahasiswa.nama, mahasiswa.jurusan, matakuliah.matakuliah, matakuliah.sks FROM krs JOIN matakuliah JOIN mahasiswa WHERE krs.id_matakuliah = matakuliah.id_matakuliah AND krs.id = mahasiswa.id ORDER BY mahasiswa.id',
+    function (error, rows, fields) {
+      if (error) {
+        console.log(error)
+      } else {
+        response.oknested(rows, res)
+      }
+    }
+  )
+}
