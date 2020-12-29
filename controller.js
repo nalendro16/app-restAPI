@@ -74,3 +74,19 @@ exports.ubahdatamahasiswa = function (req, res) {
     }
   )
 }
+
+// hapus data berdasarkan id
+exports.hapusdatamahasiswa = function (req, res) {
+  let id = req.body.id
+  connection.query(
+    'DELETE FROM mahasiswa where id=?',
+    [id],
+    function (error, rows, field) {
+      if (error) {
+        console.log(error)
+      } else {
+        response.ok('Data berhasil dihapus', res)
+      }
+    }
+  )
+}
