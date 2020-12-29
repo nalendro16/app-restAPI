@@ -1,5 +1,7 @@
 'user strict'
 
+// fungsi2 atau module yang digunakan
+
 var response = require('./res')
 var connection = require('./koneksi')
 

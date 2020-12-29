@@ -1,5 +1,6 @@
 'user strict'
 
+// routes =pengalamatan dari controller yg sudah dibuat
 module.exports = function (app) {
   var jsonku = require('./controller')
   app.route('/').get(jsonku.index)

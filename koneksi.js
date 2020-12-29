@@ -8,6 +8,7 @@ const conn = mysql.createConnection({
   database: 'dbRestAPI',
 })
 
+// error masage
 conn.connect((err) => {
   if (err) throw err
   console.log('Mysql terkoneksi')
