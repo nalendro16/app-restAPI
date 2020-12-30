@@ -17,7 +17,7 @@ exports.registrasi = function (req, res) {
     tanggal_daftar: new Date(),
   }
   // cek apakah data email sudah ada di query a.k.a sdh daftar
-  let query = 'SELECT email FROM ?? WHERE ??'
+  let query = 'SELECT email FROM ?? WHERE ?? = ?'
   let table = ['user', 'email', post.email]
 
   //   menjalankan query dari table diatas
@@ -40,7 +40,7 @@ exports.registrasi = function (req, res) {
           }
         })
       } else {
-        response.ok('email sudah terdaftar')
+        response.ok('email sudah terdaftar', res)
       }
     }
   })
