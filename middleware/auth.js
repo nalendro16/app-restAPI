@@ -10,6 +10,7 @@ let ip = require('ip')
 // controller untuk register
 exports.registrasi = function (req, res) {
   let post = {
+    //membuat array yg menerima data user
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
@@ -45,3 +46,12 @@ exports.registrasi = function (req, res) {
     }
   })
 }
+
+// controller utk login
+exports.login(function (req, res) {
+  let post = {
+    //membuat array yg menerima data user
+    password: req.body.password,
+    email: req.body.email,
+  }
+})
