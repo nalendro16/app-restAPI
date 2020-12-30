@@ -1,2 +1,2 @@
 # app-restAPI
-learn make REST-API
+REST-API untuk sistem kemahasiswaan
