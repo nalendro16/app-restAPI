@@ -71,7 +71,7 @@ exports.login = function (req, res) {
         let data = {
           id_user: id_user,
           no_token: token,
-          ip_addres: ip.address(),
+          ip_addres: ip.address,
         }
 
         // menampung data ke akses token
@@ -96,4 +96,8 @@ exports.login = function (req, res) {
       }
     }
   })
+}
+
+exports.halamanrahasia = function (req, res) {
+  response.ok('halaman ini untuk role 2', res)
 }
