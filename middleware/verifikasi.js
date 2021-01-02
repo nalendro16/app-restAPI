@@ -2,13 +2,14 @@ const jwt = require('jsonwebtoken')
 const config = require('../config/secret')
 
 // agar user akses sesuai role
-function verifikasi(roles) {
-  return function (req, rest, next) {
+function verifikasi() {
+  return function (req, res, next) {
+    let role = req.body.role
     // cek auth token di header
     let tokenWithBearer = req.headers.authorization
 
     if (tokenWithBearer) {
-      let token = tokenWithBearer.split(' ')[1]
+      let token = tokenWithBearer.split('')[1]
       //   verifikasi
       jwt.verify(token, config.secret, function (err, decoded) {
         if (err) {
